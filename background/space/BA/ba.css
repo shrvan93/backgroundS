@@ -1,0 +1,29 @@
+h1::before {
+    content: "H1.";
+}
+h1::after {
+    content: ".";
+}
+
+a {
+    text-decoration: none;
+    color: darkgreen;
+    font-size: 1.3em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+a:hover::after {
+    content: "";
+    height: 3px;
+    display: block;
+    background-color: darkorange;
+    width: 0;
+    animation-name: grow;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes grow {
+    to{
+        width: 4em;
+    }
+}
