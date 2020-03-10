@@ -10,20 +10,18 @@ a {
     color: darkgreen;
     font-size: 1.3em;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: relative;
 }
-a:hover::after {
+a::after {
     content: "";
     height: 3px;
     display: block;
     background-color: darkorange;
-    width: 0;
-    animation-name: grow;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+    transform: scaleX(0) ;
+    transition: transform 0.3s;
+    width: 100%;
+    position: absolute;
 }
-
-@keyframes grow {
-    to{
-        width: 4em;
-    }
+a:hover::after{
+    transform: scaleX(1);
 }
